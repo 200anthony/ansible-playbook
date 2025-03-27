@@ -1,0 +1,18 @@
+---
+- name: Create /opt/devops directory and info.txt file on all g1 nodes
+  hosts: g1
+  become: yes  # Use elevated privileges
+  tasks:
+    - name: Create /opt/devops directory
+      file:
+        path: /opt/devops
+        state: directory
+        mode: '0755'  # Optional: Set permissions
+
+    - name: Create info.txt file with content
+      copy:
+        content: "Hello from Ansible!"
+        dest: /opt/devops/info.txt
+        mode: '0644'  # Optional: Set file permissions
+...
+
