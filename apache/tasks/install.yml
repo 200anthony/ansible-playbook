@@ -1,0 +1,39 @@
+---
+  - name: install HTTPD
+    yum:
+      name: httpd
+      state: present
+    when: ansible_distribution == "Amazon" or ansible_distribution == "Fedora"
+
+  - name: start httpd
+    service:
+      name: httpd
+      state: started
+    when: ansible_distribution == "Amazon" or ansible_distribution == "Fedora"
+
+  - name: enable httpd
+    service:
+      name: httpd
+      state: yes
+    when: ansible_distribution == "Amazon" or ansible_distribution == "Fedora"
+   
+  - name: install Apache2
+    apt:
+      name: Apache2
+      state: present
+    when: ansible_distribution == "Ubuntu" or ansible_distribution == "Fedora"
+      
+
+  - name: start Apache2
+    service:
+      name: Apache2
+      state: started
+    when: ansible_distribution == "Ubuntu" or ansible_distribution == "Fedora"
+
+  - name: enable apache2
+    service:
+      name: apache2
+      state: yes  
+    when: ansible_distribution == "Ubuntu" or ansible_distribution == "Fedora"            
+...
+
