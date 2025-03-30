@@ -3,13 +3,13 @@
   hosts: g1
   become: yes
   vars:
-    myusername: suoton
+    myusername: 200anthony
 
 
   tasks:
   - name: update Dynamic page
     template:
-      src: Dynamic-template.j2
-      dest: /var/www/html/Dynamic-template.html
+      src: template.j2
+      dest: /var/www/html/template.html
          
 ...
