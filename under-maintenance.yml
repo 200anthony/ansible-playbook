@@ -7,7 +7,7 @@
   tasks:
   - name: maintenance
     copy:
-      src: static maintenance.html
+      src: under-maintenance.html
       dest: /var/www/html/index.html
          
 ...
